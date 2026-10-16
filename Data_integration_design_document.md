@@ -48,7 +48,7 @@ flowchart TD
         TMP -->|Incoming Entity Records| CHK{"Table Exists in<br>INFORMATION_SCHEMA?"}
         CHK -->|No: New Entity| DDL["Dynamic DDL Engine<br>(FLATTEN + TYPEOF)"]
         DDL -->|CREATE TABLE| TBL["SILVER.TARGET_TABLE<br>(Auto-Created with PK)"]
-        CHK -->|Yes: Table Exists| MRG["MERGE (SCD Type-1)"]
+        CHK -->|Yes: Table Exists| MRG["MERGE (UPDATE, INSERT)"]
         TBL --> MRG
     end
 ```
