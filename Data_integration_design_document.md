@@ -76,7 +76,7 @@ flowchart TD
 | :--- | :--- | :--- | :--- |
 | **`BRONZE`** | Raw file staging and initial table landing. | 1 Day (Transient) | Stage `STG_OPENFLOW_INGRESS`, Table `OPENFLOW_RAW_STREAM`, Stream `STR_OPENFLOW_STREAM`. |
 | **`SILVER`** | Star Schema Dimensions, Facts, and dynamic onboarded tables. | 7 Days (Time Travel) | **Core Tables**: `DIM_ACCOUNTS`, `DIM_PRODUCTS`, `FACT_ORDERS`, `FACT_SALES`<br>**Dynamic / Future Tables**: `SUPPLIER`, `WAREHOUSE`, `SHIPMENT`. |
-| **`PIPELINE_OPS`** | Pipeline control plane, metadata governance, review queues, observability, and error isolation. | Standard | Tables: `SOURCE_INGESTION_CONTROL`, `SCHEMA_EVOLUTION_CONTROL`, `DEAD_LETTER_QUEUE`, `SCHEMA_DRIFT_LOG`, `PENDING_NEW_TABLE_COLUMNS`, `SCHEMA_DRIFT_APPROVAL_QUEUE`, `WATERMARKS`, `PIPELINE_METRICS`<br>View: `V_MONITORING_DASHBOARD`<br>Procedures: 10 Modular SPs + Master Orchestrator, Task: `TASK_RUN_OPENFLOW_PIPELINES`. |
+| **`PIPELINE_OPS`** | Pipeline control plane, metadata governance, review queues, observability, and error isolation. | Standard | Tables: `SOURCE_INGESTION_CONTROL`, `SCHEMA_EVOLUTION_CONTROL`, `DEAD_LETTER_QUEUE`, `SCHEMA_DRIFT_LOG`, `PENDING_NEW_TABLE_COLUMNS`, `SCHEMA_DRIFT_APPROVAL_QUEUE`, `WATERMARKS`, `PIPELINE_METRICS`. |
 
 ### 4.2 Star Schema Data Model (Core Tables + Dynamic Future Tables)
 
