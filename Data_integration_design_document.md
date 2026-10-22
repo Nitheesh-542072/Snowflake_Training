@@ -42,7 +42,7 @@ flowchart TD
         UI_GATE -->|Normal Data: 1-Click Ingest| C4["Container 4: Commit to Silver"]
         UI_GATE -->|Exceptions Detected| C1["Container 1: Schema Drift Review<br>[Approve & Alter] vs [Reject & DLQ]"]
         C1 --> C2["Container 2: New Table Onboarding<br>[x] Checkboxes & PK Selection"]
-        C2 --> C3["Container 3: Records Review<br>• Latest on Top (⭐ LATEST)<br>• Nested items unnested (ITEM LINE)<br>• Negative values auto-deselected [ ]"]
+        C2 --> C3["Container 3: Records Review<br>• Latest on Top (LATEST)<br>• Nested items unnested (ITEM LINE)<br>• Negative values auto-deselected [ ]"]
         C3 --> C4
     end
 
